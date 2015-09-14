@@ -10,7 +10,7 @@ cleanConsump <- function(powerdata){
     # clean data - dates = dates, numbers = nums, etc
     powerdata$Date <- as.Date(as.character(powerdata$Date), format = "%d/%m/%Y")
     powerdata$Time <- as.character(powerdata$Time)
-    powerdata$Time <- strptime(powerdata$Time,  format = "%H/%M/%S")
+    powerdata$Time <- strptime(powerdata$Time,  format = "%H:%M:%S")
     powerdata$Global_active_power <- as.numeric(levels(powerdata$Global_active_power))[powerdata$Global_active_power] 
     powerdata$Global_reactive_power <- as.numeric(levels(powerdata$Global_reactive_power))[powerdata$Global_reactive_power]
     powerdata$Voltage <- as.numeric(levels(powerdata$Voltage))[powerdata$Voltage]
